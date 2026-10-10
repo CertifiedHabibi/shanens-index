@@ -214,15 +214,20 @@
   text-transform: uppercase;
 }
 
-.rp-seg:hover .rp-seg__shape {
-  fill: var(--rp-pink);
+@media (hover: hover) {
+  .rp-seg:hover .rp-seg__shape {
+    fill: var(--rp-pink);
+  }
+
+  .rp-seg:hover .rp-seg__label {
+    color: var(--rp-red);
+  }
 }
 
 .rp-seg:active .rp-seg__shape {
   fill: var(--rp-hot);
 }
 
-.rp-seg:hover .rp-seg__label,
 .rp-seg:active .rp-seg__label,
 .rp-seg:focus-visible .rp-seg__label {
   color: var(--rp-red);
@@ -425,7 +430,10 @@
   opacity: 1;
 }
 
-.rp-body--about,
+.rp-body--about {
+  overflow: hidden;
+}
+
 .rp-body--contact {
   overflow-y: auto;
 }
@@ -518,17 +526,26 @@
 .rp-about {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-rows: minmax(0, 1fr);
   gap: clamp(20px, 4vw, 56px);
   align-items: center;
-  min-height: 100%;
-  padding: clamp(20px, 4vw, 48px);
+  height: 100%;
+  padding: clamp(16px, 3vh, 48px) clamp(20px, 4vw, 48px);
+}
+
+.rp-about__media {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  min-height: 0;
 }
 
 .rp-about__media img {
   display: block;
-  width: 100%;
-  max-width: 340px;
-  max-height: 380px;
+  height: 100%;
+  max-height: 420px;
+  width: auto;
+  max-width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   margin: 0 auto;
@@ -678,12 +695,25 @@
 }
 
 @media (max-width: 720px) {
+  .rp-body--about {
+    overflow-y: auto;
+  }
+
   .rp-about {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     align-items: start;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .rp-about__media {
+    height: auto;
   }
 
   .rp-about__media img {
+    height: auto;
+    width: 100%;
     max-width: 220px;
   }
 
@@ -769,5 +799,81 @@
 @media (max-width: 560px) {
   .rp-collnav__label {
     display: none;
+  }
+
+  .rp-root {
+    --nav-h: 58px;
+  }
+
+  .rp-nav {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .rp-nav__brand {
+    gap: 6px;
+    font-size: 17px;
+  }
+
+  .rp-nav__link {
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+
+  .rp-nav__link--cta {
+    margin-left: 0;
+  }
+
+  .rp-seg__label text {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .rp-hero {
+    width: 62%;
+    gap: 1cqw;
+  }
+
+  .rp-hero__avatar {
+    width: 10.5cqw;
+    margin-bottom: 0;
+  }
+
+  .rp-hero__name {
+    font-size: 6.6cqw;
+  }
+
+  .rp-hero__tagline {
+    max-width: 26ch;
+    font-size: max(10px, 2.9cqw);
+    line-height: 1.25;
+  }
+
+  .rp-socials {
+    gap: 2.6cqw;
+    margin-top: 0.5cqw;
+  }
+
+  .rp-social {
+    width: 7cqw;
+    height: 7cqw;
+  }
+
+  .rp-copy {
+    padding: 0 60px;
+    font-size: 11px;
+  }
+
+  .rp-about {
+    gap: 18px;
+    padding: 20px 18px;
+  }
+
+  .rp-about__text h2 {
+    font-size: 30px;
+  }
+
+  .rp-contact {
+    padding: 24px 20px;
   }
 }

@@ -411,14 +411,20 @@ export default function RadialPortfolio() {
                                 key={a.id}
                                 className="rp-seg"
                                 data-glow={glow === idx ? '' : undefined}
-                                onMouseEnter={() => {
-                                    glowAt.current = idx;
-                                    setHovering(true);
+                                onPointerEnter={e => {
+                                    if (e.pointerType === 'mouse') {
+                                        glowAt.current = idx;
+                                        setHovering(true);
+                                    }
                                 }}
-                                onMouseLeave={() => setHovering(false)}
-                                onFocus={() => {
-                                    glowAt.current = idx;
-                                    setHovering(true);
+                                onPointerLeave={e => {
+                                    if (e.pointerType === 'mouse') setHovering(false);
+                                }}
+                                onFocus={e => {
+                                    if (e.target.matches(':focus-visible')) {
+                                        glowAt.current = idx;
+                                        setHovering(true);
+                                    }
                                 }}
                                 onBlur={() => setHovering(false)}
                                 role="button"
