@@ -3,7 +3,7 @@ const withBase = path => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
 export const PROFILE = {
   name: 'Shanen',
   name2: 'Shanen\'s Index',
-  tagline: 'I draw cute girls for a living. ദ്ദി ( ᵔ ᗜ ᵔ )',
+  tagline: 'ദ്ദി ( ᵔ ᗜ ᵔ )',
   avatar: withBase('/images/shanen/shanen.png'),
   logo: withBase('/images/shanen/shanen.png'),
   aboutImage: withBase('/images/shanen/Shanenbutreal.png'),
@@ -38,9 +38,9 @@ export const ABOUT = {
 };
 
 export const CONTACT = {
-  heading: 'Bla Blee Bloo',
-  text: 'Give me something to put here shanen',
-  email: 'something something email'
+  heading: 'Get in touch!',
+  text: 'If you have any inquiries or remarks, write me a message! Let\'s collaborate.',
+  email: 'shanenred@gmail.com'
 };
 
 export const COPYRIGHT = '© 2026 Shanen. All rights reserved.';
@@ -56,35 +56,35 @@ const gallery = (dir, files) =>
 export const COLLECTIONS = [
   {
     id: 'illustrations',
-    label: 'Illustrations',
+    label: 'Illustration',
     items: gallery('illustrations', [
-      'Anen Eep Duck.png',
-      'Anen Ror.png',
-      'Frieren.png',
-      'HatsuneMiku.png',
-      'Peter.png',
-      'Renz.png',
-      'The Cat Whisperer.png',
-      'YumeCNY.png'
+      'Anen Birthday (2026).png',
+      'Anen HK Fit (2026).png',
+      'Frieren (2026).png',
+      'Hatsune Miku (2026).png',
+      'Peter (2026).png',
+      'Nero (2026).png',
+      'The Cat Whisperer (2026).png',
+      'Yume CNY (2026).png'
     ])
   },
   {
     id: 'characters',
-    label: 'Character art',
+    label: 'Concept Art'  ,
     items: gallery('characters', [
-      'Idris Bust.png',
-      'Idris.png',
-      'Idris Turnaround.png',
-      'Kiri.png',
-      'Phoney.png',
-      'Ryoko.png',
-      'Sinigang.png',
-      'Sinigang Char.png'
+      'Idris Bust (2026).png',
+      'Idris (2026).png',
+      'Idris Turnaround (2026).png',
+      'Kiri (2026).png',
+      'Phoney (2026).png',
+      'Ryoko (2026).png',
+      'Sinigang Mafia (2026).png',
+      'Sinigang Gang Concept (2026).png'
     ])
   },
   {
     id: 'environments',
     label: 'Environmental art',
-    items: gallery('environments', ['env1.png', 'env2.png', 'env3.png', 'env4.png'])
+    items: gallery('environments', ['Mount Plein Air (2025).png', 'Cerulean Blue (2025).png', 'Skruvby Ruins (2025).png', 'Porta Mundi (2026).png'])
   }
 ];
